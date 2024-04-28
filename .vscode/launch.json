@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5678
+            },
+            "justMyCode": false,
+        },
+        {
+            "name": "nethack_experiments.test_batching",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "nethack_experiments.test_batching",
+            "args": [
+                "--model", "/home/bartek/BIS-472/pytorch/streaming_params_18000",
+            ],
+            "justMyCode": false,
+            // "env": {
+            //     "VLLM_NCCL_SO_PATH": "/media/bartek/disk/usr/lib/x86_64-linux-gnu/libnccl.so.2",
+            // }
+        },
+        {
+            "name": "fi_examples.nethack.train_nethack",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "fi_examples.nethack.train_nethack",
+            "args": [
+                "--env=nethack_challenge",
+                "--seed=0",
+                "--worker_num_splits=1",
+                "--num_workers=1",
+                "--num_envs_per_worker=16",
+            ],
+            "justMyCode": false,
+        },
+    ]
+}

@@ -1,0 +1,17 @@
+repos:
+-   repo: https://github.com/psf/black
+    rev: 23.12.1
+    hooks:
+    -   id: black
+        exclude: '^(external|babyai_experiments)/'
+-   repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: isort (python)
+        exclude: '^(external|babyai_experiments)/'
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+    -   id: flake8
+        exclude: '^(external|babyai_experiments)/'

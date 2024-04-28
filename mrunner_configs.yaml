@@ -1,0 +1,36 @@
+contexts:
+  athena_eval_sf:
+    account: plgeffemb-gpu-a100
+    backend_type: slurm
+    cmd_type: sbatch
+    cpu: 16
+    gpu: 1
+    mem: 10G
+    nodes: 1
+    ntasks: 1
+    partition: plgrid-gpu-a100
+#    singularity_container: --writable-tmpfs --nv -H $PWD:/homeplaceholder -B $TMPDIR:/tmp /net/pr2/projects/plgrid/plgggmum_crl/bcupial/sf_cuda.sif
+#    singularity_container: --writable-tmpfs --nv -H $PWD:/homeplaceholder -B $TMPDIR:/tmp  /net/pr2/projects/plgrid/plggsubgoal/pmilos/eval_image.sif
+    singularity_container: --nv -H $PWD:/homeplaceholder -B $TMPDIR:/tmp -B /net/tscratch/people/plgloss/checkpoints:/checkpoints /net/pr2/projects/plgrid/plggsubgoal/pmilos/eval_image2
+
+    slurm_url: plgloss@athena.cyfronet.pl
+    storage_dir: /net/tscratch/people/plgloss/
+    time: 10  # 1 day
+
+  athena_eval_bc:
+    account: plgfoundationrl2-gpu-a100
+    backend_type: slurm
+    cmd_type: sbatch
+    cpu: 16
+    gpu: 1
+    mem: 10G
+    nodes: 1
+    ntasks: 1
+    partition: plgrid-gpu-a100
+#    singularity_container: --writable-tmpfs --nv -H $PWD:/homeplaceholder -B $TMPDIR:/tmp /net/pr2/projects/plgrid/plgggmum_crl/bcupial/sf_cuda.sif
+#    singularity_container: --writable-tmpfs --nv -H $PWD:/homeplaceholder -B $TMPDIR:/tmp  /net/pr2/projects/plgrid/plggsubgoal/pmilos/eval_image.sif
+    singularity_container: --nv -H $PWD:/homeplaceholder -B $TMPDIR:/tmp -B /net/tscratch/people/plgbartekcupial/checkpoints:/checkpoints /net/pr2/projects/plgrid/plggsubgoal/pmilos/eval_image2
+
+    slurm_url: plgbartekcupial@athena.cyfronet.pl
+    storage_dir: /net/tscratch/people/plgbartekcupial/
+    time: 2880  # 1 day

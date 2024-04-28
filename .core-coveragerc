@@ -1,0 +1,10 @@
+[run]
+omit =
+    setup.py
+    tests/*
+    fi_examples/*/experiments/*
+    fi_examples/dmlab/*
+    fi_examples/isaacgym_examples/*
+    fi_examples/vizdoom/*
+    fi_examples/brax/*
+    fi_examples/notebooks/*
